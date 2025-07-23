@@ -43,7 +43,7 @@ public class Usuario implements Asesoria{
 		System.out.println(fecha);
 	 */
 		int dias = Period.between(getFechaNacimiento(), LocalDate.of(1900, 1, 1)).getDays();
-		return dias == 0 ? true: false;
+		return dias == 0 ? false: true;
 	}
 	
 	private int calcularEdad() {
