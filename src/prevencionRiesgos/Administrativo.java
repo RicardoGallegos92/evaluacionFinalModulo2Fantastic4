@@ -3,16 +3,16 @@ package prevencionRiesgos;
 
 
 public class Administrativo extends Usuario {
+    //atributos
     private String area;// entre 5 y 20 caracteres
     private String expPrevia;// menor a 100 caracteres
-
+    //constructores
     public Administrativo(String area,String expPrevia){
         this.area=validarArea(area);
         this.expPrevia=validarExpPrevia(expPrevia);
     }
-    public Administrativo(){
+    public Administrativo(){}
 
-    }
     //getters
     public String getArea() {
         return area;
@@ -23,7 +23,7 @@ public class Administrativo extends Usuario {
         this.area = area;
     }
     public void setExpPrevia(String expPrevia) {this.expPrevia = expPrevia;}
-
+    // metodos
     private String validarArea(String area){
         if(area.length() >= 5 && area.length() <= 20 || area!=null){
             return area;
@@ -36,10 +36,9 @@ public class Administrativo extends Usuario {
             throw new IllegalArgumentException("Experiencia inválida, debe ser menor a 100 caracteres");
         return expPrevia;
     }
-
-
+    //metodo toString
     @Override
     public String toString() {
-        return String.format(area,expPrevia);
+        return String.format(getArea(),getExpPrevia());
     }
 }
