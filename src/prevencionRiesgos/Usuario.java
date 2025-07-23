@@ -8,7 +8,9 @@ public class Usuario implements Asesoria{
 	private int run;
 	
 	public Usuario() {
-//		this.fechaNacimiento = LocalDate.of(2000, 4, 15);
+		this.nombre = null;
+		this.fechaNacimiento = LocalDate.of(1900, 1, 1);
+		this.run = 0;
 	}
 	
 	public Usuario(String nombre, LocalDate fechaNacimiento, int run) {
