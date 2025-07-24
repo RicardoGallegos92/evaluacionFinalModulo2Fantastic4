@@ -32,10 +32,13 @@ public class Usuario implements Asesoria{
 		return Integer.toString(run).matches(FORMATO_RUN);
 	}
 	
-	private boolean validarNombre(String nombre) {
-		String FORMATO_NOMBRE = "[a-z A-Z]{10,50}";
-		return nombre.matches(FORMATO_NOMBRE);
-	}
+    private boolean validarNombre(String nombre) {
+        String FORMATO_NOMBRE = "[a-z A-Z]{10,50}";
+        if (nombre != null) {           
+            return nombre.matches(FORMATO_NOMBRE);
+        }
+        return false;
+    }
 	
 	private boolean validarFecha() {
 	/*
