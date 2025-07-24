@@ -49,7 +49,7 @@ public class Profesional extends Usuario {
 
 	@Override
 	public String toString() {
-		return analizarUsuario();
+		return super.toString() +  titulo + fechaIngreso;r
 	}
 	
 	// Getters y Setters con validaciones
