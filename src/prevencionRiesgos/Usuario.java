@@ -34,23 +34,26 @@ public class Usuario implements Asesoria{
 	
 	private boolean validarNombre(String nombre) {
 		String FORMATO_NOMBRE = "[a-z A-Z]{10,50}";
-		return nombre.matches(FORMATO_NOMBRE);
+		if (nombre != null) {			
+			return nombre.matches(FORMATO_NOMBRE);
+		}
+		return false;
 	}
 	
-	private boolean validarFecha() {
-	/*
-		LocalDate fecha = LocalDate.of(2000, 4, 15);
-		System.out.println(fecha);
-	 */
+	private boolean validarFechaNacimiento() {
 		int dias = Period.between(getFechaNacimiento(), LocalDate.of(1900, 1, 1)).getDays();
+		// consulta si la fecha del usuario es la fecha por defecto
 		return dias == 0 ? false: true;
 	}
 	
 	private int calcularEdad() {
 		//LocalDate fecha = LocalDate.now() - this.fechaNacimiento;
-		Period periodo = Period.between(getFechaNacimiento(), LocalDate.now());
+		if ( validarFechaNacimiento() ) {
+			Period periodo = Period.between(getFechaNacimiento(), LocalDate.now());			
+			return periodo.getYears();
+		}
 //		System.out.println(periodo.getYears());
-		return periodo.getYears();
+		return 0;
 	}
 
 	@Override
