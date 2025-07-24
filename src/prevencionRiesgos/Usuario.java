@@ -24,7 +24,7 @@ public class Usuario implements Asesoria{
 	}
 	
 	public String mostrarEdad() {
-		return String.format("El usuario tiene %d años", calcularEdad());
+		return String.format("El usuario tiene %d aÃ±os", calcularEdad());
 	}
 	
 	private boolean validarRun(int run) {
