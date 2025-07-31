@@ -10,6 +10,7 @@ public class Cliente extends Usuario {
     private int sistemaSalud;       // 1 o 2
     private String direccion;       // <=70
     private String comuna;          // <=50
+    private int edad;               // 1-150
 
     public Cliente() {
         super();
@@ -20,12 +21,13 @@ public class Cliente extends Usuario {
         this.sistemaSalud = 0;
         this.direccion = null;
         this.comuna = null;
+        this.edad = 0;
     }
 
     public Cliente(String nombre, LocalDate fechaNacimiento, int run,
                    String nombres, String apellidos, String telefono,
                    String afp, int sistemaSalud, String direccion,
-                   String comuna) {
+                   String comuna, int Edad) {
         super(nombre, fechaNacimiento, run);
         setNombres(nombres);
         setApellidos(apellidos);
@@ -34,6 +36,7 @@ public class Cliente extends Usuario {
         setSistemaSalud(sistemaSalud);
         setDireccion(direccion);
         setComuna(comuna);
+        setEdad(edad);
     }
 
     public String obtenerNombre() {
@@ -58,7 +61,7 @@ public class Cliente extends Usuario {
                "Sistema de Salud: " + obtenerSistemaSalud() + "\n" +
                "Dirección: " + direccion + "\n" +
                "Comuna: " + comuna + "\n" +
-               "Edad: " + mostrarEdad(); // <- heredado desde Usuario
+               "Edad: " + mostrarEdad(); // herencia
     }
 
     // ----------- Getters y Setters con validaciones ------------------
@@ -145,5 +148,19 @@ public class Cliente extends Usuario {
         } else {
             this.comuna = null;
         }
+    }
+
+
+       public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        if (edad >= 1 && edad <= 150) {
+            this.edad = edad;
+        } else {
+            this.edad = 0;
+        }
+
     }
 }
