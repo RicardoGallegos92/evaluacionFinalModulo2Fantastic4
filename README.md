@@ -20,9 +20,9 @@ JDK-24
         + [ ] Profesional   (Marglodis)
         + [ ] Cliente       (Gonzalo)
             + [ ] Accidente
-            + [ ] Capacitacion
-            + [ ] VisitaTerreno
-                + [ ] Revision
+            + [ ] Capacitacion  (Cristian)
+            + [ ] VisitaTerreno (Marglodis)
+                + [ ] Revision  (Marglodis)
         + [ ] Contenedor
             + [ ] Principal
 ---
