@@ -36,6 +36,7 @@ public class Administrativo extends Usuario {
             throw new IllegalArgumentException("Experiencia inválida, debe ser menor a 100 caracteres");
         return expPrevia;
     }
+
     //metodo toString
     @Override
     public String toString() {
