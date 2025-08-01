@@ -5,25 +5,22 @@ package prevencionRiesgos;
 public class Administrativo extends Usuario {
     private String area;// entre 5 y 20 caracteres
     private String expPrevia;// menor a 100 caracteres
-
+    //constructores
     public Administrativo(String area,String expPrevia){
         this.area=validarArea(area);
         this.expPrevia=validarExpPrevia(expPrevia);
     }
-    public Administrativo(){
+    public Administrativo(){}
 
-    }
     //getters
-    public String getArea() {
-        return area;
-    }
+    public String getArea() {return area;}
     public String getExpPrevia() {return expPrevia;}
+
     //setters
-    public void setArea(String area) {
-        this.area = area;
-    }
+    public void setArea(String area) {this.area = area;}
     public void setExpPrevia(String expPrevia) {this.expPrevia = expPrevia;}
 
+    //metodos
     private String validarArea(String area){
         if(area.length() >= 5 && area.length() <= 20 || area!=null){
             return area;
@@ -31,15 +28,21 @@ public class Administrativo extends Usuario {
             throw new IllegalArgumentException("El área debe tener entre 5-20 caracteres y no ser nulo.");
         }
     }
+    // metodo validarExpPrevia()
     private String validarExpPrevia(String expPrevia) {
         if (expPrevia == null || expPrevia.isEmpty() || expPrevia.length() > 100)
             throw new IllegalArgumentException("Experiencia inválida, debe ser menor a 100 caracteres");
         return expPrevia;
     }
-
+    // metodo analizarUsuario()
+    @Override
+    public void analizarUsuario() {
+        super.analizarUsuario(); // llama al método de Usuario
+        return String.format("Area: %s \nExperiencia previa: %s ",getArea(),getExpPrevia();
+    }
 
     @Override
     public String toString() {
-        return String.format(area,expPrevia);
+        return String.format("Area: %s \nExperiencia previa: %s ",getArea(),getExpPrevia();
     }
 }
