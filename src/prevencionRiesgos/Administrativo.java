@@ -42,4 +42,10 @@ public class Administrativo extends Usuario {
     public String toString() {
         return String.format(getArea(),getExpPrevia());
     }
+    // metodo analizarUsuario
+    @Override
+    public void analizarUsuario() {
+        super.analizarUsuario();  // Llama al método del padre para mostrar sus datos
+        System.out.println(String.format("Área: %s\nExperiencia previa: %s", getArea(), getExpPrevia()));
+    }
 }
