@@ -100,6 +100,10 @@ public class Capacitacion {
 
     // Método mostrarDetalle
     public String mostrarDetalle() {
-        return "La capacitación será en " + getLugar() + " a las " + getHora() + " del día " + getDia() + ", y durará " + getDuracion() + ".";
+        return "La capacitación será en " +
+                getLugar() + " a las " +
+                getHora() + " del día " +
+                getDia() + ", y durará " +
+                getDuracion() + ".";
     }
 }
