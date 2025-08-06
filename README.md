@@ -13,18 +13,18 @@ JDK-24
 3. Cristian Miranda
 4. Gonzalo Lemus
 ---
-* [X] Interface Asesoria
+* [X] Interface Asesoria    (Ricardo)
 * Clases
-    + [X] Usuario
-        + [ ] Administativo (Cristian)
-        + [ ] Profesional   (Marglodis)
-        + [ ] Cliente       (Gonzalo)
-            + [ ] Accidente
+    + [X] Usuario   (Ricardo)
+        + [X] Administativo (Cristian)
+        + [X] Profesional   (Marglodis)
+        + [X] Cliente       (Gonzalo)
+            + [X] Accidente (Ricardo)
             + [ ] Capacitacion  (Cristian)
             + [ ] VisitaTerreno (Marglodis)
                 + [ ] Revision  (Marglodis)
-        + [ ] Contenedor
-            + [ ] Principal
+        + [ ] Contenedor    (Ricardo)
+            + [ ] Principal (Ricardo)
 ---
 ![Diagrama de Clases](./Diagrama/Diagrama.drawio.png "*Sujeto a modificaciones")
 ---
