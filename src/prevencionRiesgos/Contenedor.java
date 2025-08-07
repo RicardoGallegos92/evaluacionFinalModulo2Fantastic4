@@ -18,12 +18,6 @@ public class Contenedor {
 	}
 //------------- Constructores -----------------:end
 //------------- Metodos -----------------:start
-	@Override
-	public String toString() {
-		return "Contenedor: {asesorias=" + asesorias
-				+ ", capacitaciones=" + capacitaciones + "}";
-	}
-	
 	private void almacenarAsesoria(Asesoria asesoria) {
 		if ( asesoria != null ) {
 			this.asesorias.add(asesoria);
@@ -49,24 +43,68 @@ public class Contenedor {
 	}
 	
 	public void eliminarUsuario(int run) {
-		
+//		myObjectList.removeIf(obj -> obj.getName().equals("Beta"));	//ejemplo
+		this.asesorias.removeIf(ase -> ((Usuario) ase).getRun() == run);
 	}
 	
-	public ArrayList<Usuario> listarUsuarios() {
-		ArrayList<Usuario> a = new ArrayList<>();
-		return a;
+	/**
+	 * 
+	 * @return lista de todos los usuarios
+	 */
+	public ArrayList<Asesoria> listarUsuarios() {
+//		ArrayList<Usuario> a = new ArrayList<>();
+		return getAsesorias();
 	}
-	
-	public ArrayList<Usuario> listarUsuariosPorTipo() {
-		ArrayList<Usuario> a = new ArrayList<>();
-		return a;
+	/**
+	 * 
+	 * @param tipoUsuario nombre del tipo de Usuario que se desea obtener,
+	 * corresponde al nombre de la sub-clase especifica de Usuario (Administrativo,
+	 *  Cliente, Profesional).
+	 * @return ArrayList con los Usuarios que coinciden con el tipo solicitado.
+	 */
+	public ArrayList<Usuario> listarUsuariosPorTipo(String tipoUsuario) {
+		ArrayList<Usuario> subListado = new ArrayList<>();
+		for( Asesoria usuario : this.asesorias) {
+				if ( usuario.getClass().toString().equals(tipoUsuario.trim()) ) {					
+					subListado.add((Usuario)usuario);
+				}
+		}
+		return subListado;
 	}
 	
 	public ArrayList<Capacitacion> listarCapacitaciones () {
-		ArrayList<Usuario> a = new ArrayList<>();
-		return a;		
+		return getCapacitaciones();
+	}
+	/**
+	 * @return un Array con el listado de metodos disponibles 
+	 */
+	public String[] metodos() {
+		String[] lista= {"almacenarCliente",
+						"almacenarProfesional",
+						"almacenarAdministrativo",
+						"almacenarCapacitacion",
+						"eliminarUsuario",
+						"listarUsuarios",
+						"listarUsuariosPorTipo",
+						"listarCapacitaciones"};
+		return lista;
 	}
 //------------- Metodos -----------------:end
 //------------- Getter & Setter -----------------:start
+	public ArrayList<Asesoria> getAsesorias() {
+		return asesorias;
+	}
+
+	public void setAsesorias(ArrayList<Asesoria> asesorias) {
+		this.asesorias = asesorias;
+	}
+
+	public ArrayList<Capacitacion> getCapacitaciones() {
+		return capacitaciones;
+	}
+
+	public void setCapacitaciones(ArrayList<Capacitacion> capacitaciones) {
+		this.capacitaciones = capacitaciones;
+	}
 //------------- Getter & Setter -----------------:end
 }

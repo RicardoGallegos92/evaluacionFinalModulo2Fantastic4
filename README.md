@@ -23,8 +23,8 @@ JDK-24
             + [ ] Capacitacion  (Cristian)
             + [ ] VisitaTerreno (Marglodis)
                 + [ ] Revision  (Marglodis)
-        + [ ] Contenedor    (Ricardo)
-            + [ ] Principal (Ricardo)
+        + [X] Contenedor    (Ricardo)
+            + [X] Principal (Ricardo)
 ---
 ![Diagrama de Clases](./Diagrama/Diagrama.drawio.png "*Sujeto a modificaciones")
 ---

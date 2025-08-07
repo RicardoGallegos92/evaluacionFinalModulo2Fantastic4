@@ -94,5 +94,5 @@ public class Usuario implements Asesoria{
 			this.run = 0;
 		}
 	}
-}
 //------------- Getter & Setter -----------------:end
+}
