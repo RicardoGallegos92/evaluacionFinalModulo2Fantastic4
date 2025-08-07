@@ -1,6 +1,7 @@
 package prevencionRiesgos;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Cliente extends Usuario {
     private String nombres;         // 5-30
@@ -11,6 +12,8 @@ public class Cliente extends Usuario {
     private String direccion;       // <=70
     private String comuna;          // <=50
     private int edad;               // 1-150
+    private ArrayList<Accidente> accidentes;
+    private ArrayList<VisitaTerreno> visitasTerreno;
 
     public Cliente() {
         super();
