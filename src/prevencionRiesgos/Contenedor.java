@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Contenedor {
 	ArrayList<Asesoria> asesorias;
-	ArrayList<Capacitacion> capacitaciones;
+//	ArrayList<Capacitacion> capacitaciones;
 	
 	
 //------------- Constructores -----------------:start
@@ -41,9 +41,9 @@ public class Contenedor {
 		return a;
 	}
 	
-	public ArrayList<Capacitacion>  () {
+	//public ArrayList<Capacitacion>  () {
 		
-	}
+	//}
 //------------- Metodos -----------------:end
 
 //------------- Getter & Setter -----------------:start

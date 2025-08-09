@@ -2,6 +2,7 @@ package prevencionRiesgos;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cliente extends Usuario {
     private String nombres;         // 5-30
@@ -17,20 +18,15 @@ public class Cliente extends Usuario {
 
     public Cliente() {
         super();
-        this.nombres = null;
-        this.apellidos = null;
-        this.telefono = null;
-        this.afp = null;
-        this.sistemaSalud = 0;
-        this.direccion = null;
-        this.comuna = null;
-        this.edad = 0;
+        this.visitasTerreno = new ArrayList<>();
     }
 
+    
+    
     public Cliente(String nombre, LocalDate fechaNacimiento, int run,
                    String nombres, String apellidos, String telefono,
                    String afp, int sistemaSalud, String direccion,
-                   String comuna, int Edad) {
+                   String comuna, int edad) {
         super(nombre, fechaNacimiento, run);
         setNombres(nombres);
         setApellidos(apellidos);
@@ -40,6 +36,7 @@ public class Cliente extends Usuario {
         setDireccion(direccion);
         setComuna(comuna);
         setEdad(edad);
+        this.visitasTerreno = new ArrayList<>();
     }
 
     public String obtenerNombre() {
@@ -165,5 +162,19 @@ public class Cliente extends Usuario {
             this.edad = 0;
         }
 
+    }
+    
+    public void agregarVisitaTerreno(VisitaTerreno visita) {
+    	if(visita.equals(null)) {
+    		throw new IllegalArgumentException("La visita no puede ser nula");
+    	}
+    	if(visita.getRutCliente() != this.getRun()) {
+    		throw new IllegalArgumentException("El RUT del cliente en la visita no coincide.");
+    	}
+    	visitasTerreno.add(visita);
+    }
+    
+    public List<VisitaTerreno> getVisitasTerreno(){
+    	return new ArrayList<>(visitasTerreno);
     }
 }

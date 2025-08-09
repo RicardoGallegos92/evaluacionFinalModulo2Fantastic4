@@ -36,13 +36,13 @@ public class Administrativo extends Usuario {
     }
     // metodo analizarUsuario()
     @Override
-    public void analizarUsuario() {
+    public String analizarUsuario() {
         super.analizarUsuario(); // llama al método de Usuario
-        return String.format("Area: %s \nExperiencia previa: %s ",getArea(),getExpPrevia();
+        return String.format("Area: %s \nExperiencia previa: %s ",getArea(),getExpPrevia());
     }
 
     @Override
     public String toString() {
-        return String.format("Area: %s \nExperiencia previa: %s ",getArea(),getExpPrevia();
+        return String.format("Area: %s \nExperiencia previa: %s ",getArea(),getExpPrevia());
     }
 }
