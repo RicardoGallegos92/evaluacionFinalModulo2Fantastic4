@@ -7,8 +7,8 @@ public class Contenedor {
 	ArrayList<Capacitacion> capacitaciones;
 //------------- Constructores -----------------:start
 	public Contenedor() {
-		this.asesorias = null;
-		this.capacitaciones = null;
+		setAsesorias(null);
+		setCapacitaciones(null);
 	}
 	
 	public Contenedor(ArrayList<Asesoria> asesorias,

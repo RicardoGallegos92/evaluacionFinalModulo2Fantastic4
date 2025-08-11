@@ -1,7 +1,5 @@
 package prevencionRiesgos;
 
-
-
 public class Administrativo extends Usuario {
     private String area;// entre 5 y 20 caracteres
     private String expPrevia;// menor a 100 caracteres

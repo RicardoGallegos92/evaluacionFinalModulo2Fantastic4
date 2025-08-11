@@ -70,7 +70,7 @@ public class Main {
 		
 		principal.getContenedor().almacenarAdministrativo(nuevoAdministrativo);
 	}
-	
+	// metodoPendiente
 	public void nuevoCapacitacion(){
 		
 		principal.getContenedor().almacenarCapacitacion();
@@ -83,7 +83,13 @@ public class Main {
 	
 	public void listarUsuarios(){
 		ArrayList<Asesoria> asesorias = principal.getContenedor().listarUsuarios();
-
+		if(asesorias == null){
+			System.out.println("No existen asesorias en el registro");
+			return;
+		}
+		for(Usuario asesoria : asesorias){
+			System.out.println(asesoria.toString());
+		}
 	}
 	
 	public void listarUsuariosPorTipo(){

@@ -12,7 +12,7 @@ public class Usuario implements Asesoria{
 		setFechaNacimiento( LocalDate.of(1900, 1, 1) );
 		setRun(0);
 	}
-	
+
 	public Usuario(String nombre, LocalDate fechaNacimiento, int run) {
 		setNombre(nombre);
 		setFechaNacimiento(fechaNacimiento);
