@@ -1,5 +1,6 @@
 package prevencionRiesgos;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -7,16 +8,45 @@ public class Main {
 	Principal principal = new Principal();
 	
 	public void almacenarCliente(){
-		
-		principal.getContenedor().almacenarCliente();
+		String nombre = null;
+		LocalDate fechaNacimiento = null;
+		int run = 0;
+		String nombres = null;
+	    String apellidos = null;
+	    String telefono = null;
+	    String afp = null;
+	    int sistemaSalud = 0;
+	    String direccion = null;
+	    String comuna = null;
+
+	    Cliente nuevoCliente = new Cliente(
+						    		nombre,
+						    		fechaNacimiento,
+						    		run,
+						    		nombres,
+						    		apellidos,
+						    		telefono,
+						    		afp,
+						    		sistemaSalud,
+						    		direccion,
+						    		comuna,
+						    		0		// se debe remover el int edad
+	    						);
+		principal.getContenedor().almacenarCliente(nuevoCliente);
 	}
 	
 	public void almacenarProfesional(){
-		
+		String nombre = null;
+		LocalDate fechaNacimiento = null;
+		int run = 0;
+
 		principal.getContenedor().almacenarProfesional();
 	}
 	
 	public void almacenarAdministrativo(){
+		String nombre = null;
+		LocalDate fechaNacimiento = null;
+		int run = 0;
 		
 		principal.getContenedor().almacenarAdministrativo();
 	}

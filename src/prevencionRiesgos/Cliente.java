@@ -31,6 +31,7 @@ public class Cliente extends Usuario {
                    String nombres, String apellidos, String telefono,
                    String afp, int sistemaSalud, String direccion,
                    String comuna, int Edad) {
+    	// remover edad del constructor >:(
         super(nombre, fechaNacimiento, run);
         setNombres(nombres);
         setApellidos(apellidos);
