@@ -13,8 +13,8 @@ public class Contenedor {
 	
 	public Contenedor(ArrayList<Asesoria> asesorias,
 				ArrayList<Capacitacion> capacitaciones) {
-		this.asesorias = asesorias;
-		this.capacitaciones = capacitaciones;
+		setAsesorias(asesorias);
+		setCapacitaciones(capacitaciones);
 	}
 //------------- Constructores -----------------:end
 //------------- Metodos -----------------:start

@@ -7,7 +7,7 @@ public class Main {
 	Scanner leer = new Scanner(System.in);
 	Principal principal = new Principal();
 	
-	public void almacenarCliente(){
+	public void nuevoCliente(){
 		String nombre = null;
 		LocalDate fechaNacimiento = null;
 		int run = 0;
@@ -35,15 +35,25 @@ public class Main {
 		principal.getContenedor().almacenarCliente(nuevoCliente);
 	}
 	
-	public void almacenarProfesional(){
+	public void nuevoProfesional(){
 		String nombre = null;
 		LocalDate fechaNacimiento = null;
 		int run = 0;
+		String titulo;
+		LocalDate fechaIngreso;
 
-		principal.getContenedor().almacenarProfesional();
+		Profesional profesional = new Profesional(
+									nombre,
+									fechaNacimiento,
+									run,
+									titulo,
+									fechaIngreso
+								);
+
+		principal.getContenedor().almacenarProfesional(Profesional);
 	}
 	
-	public void almacenarAdministrativo(){
+	public void nuevoAdministrativo(){
 		String nombre = null;
 		LocalDate fechaNacimiento = null;
 		int run = 0;
@@ -51,7 +61,7 @@ public class Main {
 		principal.getContenedor().almacenarAdministrativo();
 	}
 	
-	public void almacenarCapacitacion(){
+	public void nuevoCapacitacion(){
 		
 		principal.getContenedor().almacenarCapacitacion();
 	}
@@ -107,13 +117,13 @@ public class Main {
 			case 0:
 				return;
 			case 1:
-				almacenarCliente();
+				nuevoCliente();
 			case 2:
-				almacenarProfesional();
+				nuevoProfesional();
 			case 3:
-				almacenarAdministrativo();
+				nuevoAdministrativo();
 			case 4:
-				almacenarCapacitacion();
+				nuevoCapacitacion();
 			case 5:
 				eliminarUsuario();
 			case 6:
