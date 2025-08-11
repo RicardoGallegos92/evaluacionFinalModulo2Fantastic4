@@ -77,13 +77,13 @@ public class Main {
 	}
 	
 	public void eliminarUsuario(){
-		
-		principal.getContenedor().eliminarUsuario();
+		int run = 0;
+		principal.getContenedor().eliminarUsuario(run);
 	}
 	
 	public void listarUsuarios(){
-		
-		principal.getContenedor().listarUsuarios();
+		ArrayList<Asesoria> asesorias = principal.getContenedor().listarUsuarios();
+
 	}
 	
 	public void listarUsuariosPorTipo(){
