@@ -114,7 +114,6 @@ public class Main {
 		}
 		imprimirListado(capacitaciones);
 	}
-	
 
 	/**
 	 *retorna un menu con opciones
@@ -139,11 +138,12 @@ public class Main {
 	public void solicitarInput() {
 //		limpiarPantalla();
 		menu();
-		int opcion = -1;
-
+		int opcion = -1;	// sí, lo sé.
+		System.out.print(">");
 		opcion = Integer.parseUnsignedInt(leer.nextLine().trim());
 		switch (opcion){		
 			case 0:
+				System.out.println("Gracias por su preferencia");
 				return;
 			case 1:
 				nuevoCliente();
@@ -162,9 +162,9 @@ public class Main {
 			case 8:
 				listarCapacitaciones();
 			default:
-				;
+				System.out.println("Opcion Invalida");
 		}
-		
+		return solicitarInput();
 	}
 
 	public static void main(String[] args) {
