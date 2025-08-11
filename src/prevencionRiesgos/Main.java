@@ -107,8 +107,12 @@ public class Main {
 	}
 	
 	public void listarCapacitaciones(){
-		
-		principal.getContenedor().listarCapacitaciones();
+		ArrayList<Capacitacion> capacitaciones = principal.getContenedor().listarCapacitaciones();
+		if(capacitaciones == null){
+			System.out.println("No existen capacitaciones en el registro");
+			return;
+		}
+		imprimirListado(capacitaciones);
 	}
 	
 
