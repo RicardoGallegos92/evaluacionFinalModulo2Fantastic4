@@ -42,7 +42,7 @@ public class Main {
 		String titulo;
 		LocalDate fechaIngreso;
 
-		Profesional profesional = new Profesional(
+		Profesional nuevoProfesional = new Profesional(
 									nombre,
 									fechaNacimiento,
 									run,
@@ -50,15 +50,25 @@ public class Main {
 									fechaIngreso
 								);
 
-		principal.getContenedor().almacenarProfesional(Profesional);
+		principal.getContenedor().almacenarProfesional(nuevoProfesional);
 	}
 	
 	public void nuevoAdministrativo(){
 		String nombre = null;
 		LocalDate fechaNacimiento = null;
 		int run = 0;
+		String area = null;
+		String expPrevia = null;
+
+		Administrativo nuevoAdministrativo = new Administrativo(
+									nombre,
+									fechaNacimiento,
+									run,
+									area,
+									expPrevia
+								);
 		
-		principal.getContenedor().almacenarAdministrativo();
+		principal.getContenedor().almacenarAdministrativo(nuevoAdministrativo);
 	}
 	
 	public void nuevoCapacitacion(){
