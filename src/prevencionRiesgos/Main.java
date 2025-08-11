@@ -80,6 +80,12 @@ public class Main {
 		int run = 0;
 		principal.getContenedor().eliminarUsuario(run);
 	}
+
+	public void imprimirListado(ArrayList<Object> listado){
+		for(Object elemento : listado){
+			System.out.println(elemento.toString());
+		}
+	}
 	
 	public void listarUsuarios(){
 		ArrayList<Asesoria> asesorias = principal.getContenedor().listarUsuarios();
@@ -87,14 +93,17 @@ public class Main {
 			System.out.println("No existen asesorias en el registro");
 			return;
 		}
-		for(Usuario asesoria : asesorias){
-			System.out.println(asesoria.toString());
-		}
+		imprimirListado(asesorias);
 	}
 	
 	public void listarUsuariosPorTipo(){
-		
-		principal.getContenedor().listarUsuariosPorTipo();
+		String tipoUsuario = null;
+		ArrayList<Usuario> usuariosPorTipo = principal.getContenedor().listarUsuariosPorTipo(tipoUsuario);
+		if(usuariosPorTipo == null){
+			System.out.printf("No existen Usuarios de tipo %s en el registro\n",tipoUsuario);
+			return;
+		}
+		imprimirListado(usuariosPorTipo);
 	}
 	
 	public void listarCapacitaciones(){

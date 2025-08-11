@@ -64,7 +64,7 @@ public class Contenedor {
 	 */
 	public ArrayList<Usuario> listarUsuariosPorTipo(String tipoUsuario) {
 		ArrayList<Usuario> subListado = new ArrayList<>();
-		for( Asesoria usuario : this.asesorias) {
+		for( Usuario usuario : this.asesorias) {
 				if ( usuario.getClass().toString().equals(tipoUsuario.trim()) ) {					
 					subListado.add((Usuario)usuario);
 				}
