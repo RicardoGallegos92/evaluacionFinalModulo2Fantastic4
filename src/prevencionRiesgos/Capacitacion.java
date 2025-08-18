@@ -106,4 +106,11 @@ public class Capacitacion {
                 getDia() + ", y durará " +
                 getDuracion() + ".";
     }
+
+	@Override
+	public String toString() {
+		return "Capacitacion [identificador=" + identificador + ", rutCliente=" + rutCliente + ", dia=" + dia
+				+ ", hora=" + hora + ", lugar=" + lugar + ", duracion=" + duracion + ", cantidadAsistentes="
+				+ cantidadAsistentes + "]";
+	}
 }

@@ -65,7 +65,7 @@ public class Cliente extends Usuario {
                "Sistema de Salud: " + obtenerSistemaSalud() + "\n" +
                "Dirección: " + direccion + "\n" +
                "Comuna: " + comuna + "\n" +
-               "Edad: " + mostrarEdad(); // herencia
+               "Edad: " + calcularEdad(); // >:(
     }
 
     // ----------- Getters y Setters con validaciones ------------------

@@ -47,10 +47,7 @@ public class Profesional extends Usuario {
 		return sb.toString();
 	}
 
-	@Override
-	public String toString() {
-		return analizarUsuario();
-	}
+	
 	
 	// Getters y Setters con validaciones
 	
@@ -72,6 +69,11 @@ public class Profesional extends Usuario {
 		if (fechaIngreso != null) {
 			this.fechaIngreso = fechaIngreso;
 		}
+	}
+
+	@Override
+	public String toString() {
+		return "Profesional [titulo=" + titulo + ", fechaIngreso=" + fechaIngreso + "]";
 	}
 
 }
