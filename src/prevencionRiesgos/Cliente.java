@@ -30,7 +30,7 @@ public class Cliente extends Usuario {
     public Cliente(String nombre, LocalDate fechaNacimiento, int run,
                    String nombres, String apellidos, String telefono,
                    String afp, int sistemaSalud, String direccion,
-                   String comuna, int Edad) {
+                   String comuna) {
     	// remover edad del constructor >:(
         super(nombre, fechaNacimiento, run);
         setNombres(nombres);
@@ -40,7 +40,7 @@ public class Cliente extends Usuario {
         setSistemaSalud(sistemaSalud);
         setDireccion(direccion);
         setComuna(comuna);
-        setEdad(edad);
+        setEdad(calcularEdad());
     }
 
     public String obtenerNombre() {

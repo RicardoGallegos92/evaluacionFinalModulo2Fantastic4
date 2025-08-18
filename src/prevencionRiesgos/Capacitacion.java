@@ -10,7 +10,7 @@ public class Capacitacion {
 
     // Constructor
     public Capacitacion(int identificador, String rutCliente, String dia, String hora, String lugar, String duracion, int cantidadAsistentes) {
-        this.identificador = identificador;
+        setIdentificador(identificador);
         setRutCliente(rutCliente);
         setDia(dia);
         setHora(hora);

@@ -46,7 +46,7 @@ public class Usuario implements Asesoria{
 		return dias == 0 ? false: true;
 	}
 	
-	private int calcularEdad() {
+	protected int calcularEdad() {
 		//LocalDate fecha = LocalDate.now() - this.fechaNacimiento;
 		if ( validarFechaNacimiento() ) {
 			Period periodo = Period.between(getFechaNacimiento(), LocalDate.now());			

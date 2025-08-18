@@ -3,7 +3,7 @@ package prevencionRiesgos;
 import java.util.ArrayList;
 
 public class Contenedor {
-	ArrayList<Asesoria> asesorias;
+	ArrayList<Usuario> asesorias;
 	ArrayList<Capacitacion> capacitaciones;
 //------------- Constructores -----------------:start
 	public Contenedor() {
@@ -11,7 +11,7 @@ public class Contenedor {
 		setCapacitaciones(null);
 	}
 	
-	public Contenedor(ArrayList<Asesoria> asesorias,
+	public Contenedor(ArrayList<Usuario> asesorias,
 				ArrayList<Capacitacion> capacitaciones) {
 		setAsesorias(asesorias);
 		setCapacitaciones(capacitaciones);
@@ -51,7 +51,7 @@ public class Contenedor {
 	 * 
 	 * @return lista de todos los usuarios
 	 */
-	public ArrayList<Asesoria> listarUsuarios() {
+	public ArrayList<Usuario> listarUsuarios() {
 //		ArrayList<Usuario> a = new ArrayList<>();
 		return getAsesorias();
 	}
@@ -65,9 +65,11 @@ public class Contenedor {
 	public ArrayList<Usuario> listarUsuariosPorTipo(String tipoUsuario) {
 		ArrayList<Usuario> subListado = new ArrayList<>();
 		for( Usuario usuario : this.asesorias) {
-				if ( usuario.getClass().toString().equals(tipoUsuario.trim()) ) {					
-					subListado.add((Usuario)usuario);
-				}
+			// Comparamos el nombre de la clase sin el paquete
+			String simpleName = usuario.getClass().getSimpleName().toLowerCase();
+			if (simpleName.equals(tipoUsuario.toLowerCase().trim())) {
+				subListado.add(usuario);
+            }
 		}
 		return subListado;
 	}
@@ -91,12 +93,17 @@ public class Contenedor {
 	}
 //------------- Metodos -----------------:end
 //------------- Getter & Setter -----------------:start
-	public ArrayList<Asesoria> getAsesorias() {
+	public ArrayList<Usuario> getAsesorias() {
 		return asesorias;
 	}
 
-	public void setAsesorias(ArrayList<Asesoria> asesorias) {
-		this.asesorias = asesorias;
+	public void setAsesorias(ArrayList<Usuario> asesorias) {
+		if (asesorias == null){
+			this.asesorias = new ArrayList<>();
+		}
+		else{
+			this.asesorias = asesorias;
+		}
 	}
 
 	public ArrayList<Capacitacion> getCapacitaciones() {
@@ -104,7 +111,12 @@ public class Contenedor {
 	}
 
 	public void setCapacitaciones(ArrayList<Capacitacion> capacitaciones) {
-		this.capacitaciones = capacitaciones;
+		if (capacitaciones == null){
+			this.capacitaciones = new ArrayList<>();
+		}
+		else{
+			this.capacitaciones = capacitaciones;
+		}
 	}
 //------------- Getter & Setter -----------------:end
 }

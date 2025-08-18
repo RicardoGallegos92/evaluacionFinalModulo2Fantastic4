@@ -4,7 +4,7 @@ public class Principal {
 	Contenedor contenedor;
 //------------- Constructores -----------------:start
 	public Principal() {
-		this.contenedor = null;
+		this.contenedor = new Contenedor();
 	}
 	public Principal(Contenedor contenedor) {
 		this.contenedor = contenedor;

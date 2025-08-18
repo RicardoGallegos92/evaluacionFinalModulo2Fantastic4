@@ -36,19 +36,6 @@ public class Main {
         }
     }
 
-    // Método auxiliar para leer fecha
-    private LocalDate leerFecha(String mensaje) {
-        while (true) {
-            System.out.print(mensaje + " (formato: yyyy-MM-dd): ");
-            String fechaStr = leer.nextLine().trim();
-            try {
-                return LocalDate.parse(fechaStr);
-            } catch (DateTimeParseException e) {
-                System.out.println("Formato de fecha inválido. Use yyyy-MM-dd.");
-            }
-        }
-    }
-
     // Método auxiliar para leer teléfono
     private String leerTelefono() {
         while (true) {
@@ -183,13 +170,17 @@ public class Main {
 
         System.out.print("Ingrese identificador: ");
         int identificador = Integer.parseInt(leer.nextLine().trim());
+        
+		System.out.print("Ingrese Rut Cliente: ");
+        int rutCliente = Integer.parseInt(leer.nextLine().trim());
 
-        LocalDate fecha = leerFecha("Fecha de la capacitación");
+        System.out.print("Día de la capacitación\n[Lunes - Domingo]");
+        String dia = leer.nextLine().trim();
 
         System.out.print("Ingrese hora (ej. 10:00): ");
         String hora = leer.nextLine().trim();
 
-        System.out.print("Ingrese lugar: ");
+        System.out.print("[10-20 caracteres]\nIngrese lugar: ");
         String lugar = leer.nextLine().trim();
 
         System.out.print("Ingrese duración (en minutos): ");
@@ -200,7 +191,8 @@ public class Main {
 
         Capacitacion nuevaCapacitacion = new Capacitacion(
                 identificador,
-                fecha,
+				Integer.toString(rutCliente),
+                dia,
                 hora,
                 lugar,
                 duracion,
@@ -238,7 +230,7 @@ public class Main {
     }
 
     public void listarUsuarios() {
-        ArrayList<Asesoria> asesorias = principal.getContenedor().listarUsuarios();
+        ArrayList<Usuario> asesorias = principal.getContenedor().listarUsuarios();
         if (asesorias == null || asesorias.isEmpty()) {
             System.out.println("No existen asesorias en el registro.\n");
             return;
