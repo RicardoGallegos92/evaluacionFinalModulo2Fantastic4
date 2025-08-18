@@ -36,6 +36,19 @@ public class Main {
         }
     }
 
+    // Método auxiliar para leer fecha
+    private LocalDate leerFecha(String mensaje) {
+        while (true) {
+            System.out.print("[AAAA-MM-DD]\n" + mensaje);
+            String fechaStr = leer.nextLine().trim();
+            try {
+                return LocalDate.parse(fechaStr);
+            } catch (DateTimeParseException e) {
+                System.out.println("Formato de dia inválido. Use yyyy-MM-dd.");
+            }
+        }
+    }
+
     // Método auxiliar para leer teléfono
     private String leerTelefono() {
         while (true) {
@@ -225,6 +238,8 @@ public class Main {
         }
         for (Object elemento : listado) {
             System.out.println(elemento.toString());
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
         }
         System.out.println();
     }

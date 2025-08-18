@@ -18,7 +18,7 @@ public class Contenedor {
 	}
 //------------- Constructores -----------------:end
 //------------- Metodos -----------------:start
-	private void almacenarAsesoria(Asesoria asesoria) {
+	private void almacenarAsesoria(Usuario asesoria) {
 		if ( asesoria != null ) {
 			this.asesorias.add(asesoria);
 		}

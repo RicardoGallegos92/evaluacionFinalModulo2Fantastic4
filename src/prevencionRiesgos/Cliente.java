@@ -48,11 +48,14 @@ public class Cliente extends Usuario {
     }
 
     public String obtenerSistemaSalud() {
-        return switch (sistemaSalud) {
-            case 1 -> "Fonasa";
-            case 2 -> "Isapre";
-            default -> "Desconocido";
-        };
+        switch (sistemaSalud) {
+            case 1:
+                return "Fonasa";
+            case 2:
+                return "Isapre";
+            default:
+                return "Desconocido";
+        }
     }
 
     @Override
