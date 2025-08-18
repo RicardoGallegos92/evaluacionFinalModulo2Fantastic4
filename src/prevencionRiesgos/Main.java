@@ -334,7 +334,8 @@ public class Main {
         solicitarInput(); // Llamada recursiva para seguir mostrando el menú
     }
 
-    // ------------------ MAIN ------------------
+// ------------------ MAIN ------------------
+
     public static void main(String[] args) {
         Main main = new Main();
         main.solicitarInput();
